@@ -1,0 +1,5 @@
+name = Form Alter
+description = alters basic form functionality
+package = custom
+core = 7.x
+files[] = form_alter.module

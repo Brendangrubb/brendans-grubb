@@ -1,0 +1,14 @@
+<?php
+
+function form_alter_form_alter(&$form, &$form_state, $form_id ) {
+  if ($form_id === 'contact_site_form') {
+    $form['copy']['#access'] = 0;
+    $form['copy']['#default_value'] = 1;
+    $form['subject']['#type'] = 'hidden';
+    $form['subject']['#type'] = 'hidden';
+    $form['subject']['#default_value'] = 'Feedback';
+    // print '<pre>';
+    // print_r($form);
+    // print '</pre>';
+  }
+}
