@@ -1,0 +1,5 @@
+name = Follow Mod
+description = Add John Stamos links to yout Druapl profile
+package = custom
+core = 7.x
+files[] = follow_mod.module

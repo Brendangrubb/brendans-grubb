@@ -1,0 +1,13 @@
+<?php
+
+  function follow_mod_follow_networks_alter(&$networks, $uid = 0) {
+    $networks[$uid]['drupalize'] = array(
+      'title' => t('Drupalize.me'),
+      'domain' => 'drupalize.me',
+    );
+    $networks[$uid]['facebook']['type'] = 'hidden';
+
+    // print '<pre>';
+    // print_r($networks[$uid]);
+    // print '</pre>';
+  }
