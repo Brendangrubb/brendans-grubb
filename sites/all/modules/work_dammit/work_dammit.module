@@ -1,0 +1,26 @@
+<?php
+
+function work_dammit_form_alter(&$form, &$form_state, $form_id ) {
+  // print '<pre>';
+  // print_r($form_id);
+  // print '</pre>';
+  if ($form_id === 'contact_site_form') {
+    $form['copy']['#access'] = 0;
+    $form['copy']['#default_value'] = 1;
+    $form['subject']['#type'] = 'hidden';
+    $form['subject']['#type'] = 'hidden';
+    $form['subject']['#default_value'] = 'Feedback';
+
+  }
+
+  if ($form_id == 'star_trek_movies_node_form') {
+    print '<pre>';
+    print_r($form);
+    print '</pre>';
+    $form['comment_settings'] = null;
+    $form['options'] = null;
+    $form['author'] = null;
+    $form['revision_information'] = null;
+    // exit;
+  }
+}

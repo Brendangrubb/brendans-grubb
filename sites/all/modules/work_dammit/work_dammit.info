@@ -1,0 +1,5 @@
+name = Work Dammit
+description = This better goddamn work
+package = the worst
+core = 7.x
+files[] = work_dammit.module

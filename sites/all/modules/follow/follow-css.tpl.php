@@ -91,6 +91,10 @@
   background-image: url(<?php print $icon_path; ?>/icon-newsletter.png);
 }
 
+<?php print $selector_prefix; ?>a.follow-link-drupalize {
+  background-image: url(<?php print $icon_path; ?>/icon-drupal-man-small.png);
+}
+
 <?php if (!empty($css_overrides)): ?>
 /* Custom overrides for this style. */
 <?php print $css_overrides; ?>

@@ -2,7 +2,7 @@
 
 function form_alter_form_alter(&$form, &$form_state, $form_id ) {
   // print '<pre>';
-  // print_r($form);
+  // print_r($form_id);
   // print '</pre>';
   if ($form_id === 'contact_site_form') {
     $form['copy']['#access'] = 0;
@@ -13,15 +13,42 @@ function form_alter_form_alter(&$form, &$form_state, $form_id ) {
 
   }
 
-  if ($form_id === 'star_trek_movies_node_form') {
-    print '<pre>';
-    print_r($form);
-    print '</pre>';
-    $form['comment_settings']['#access']=0;
-    $form['options']['#access']=0;
-    $form['author']['#access']=0;
-    $form['revision_information']['#access']=0;
+  if ($form_id == 'star_trek_movies_node_form') {
+    // print '<pre>';
+    // print_r($form);
+    // print '</pre>';
+    $form['comment_settings'] = null;
+    $form['options'] = null;
+    $form['author'] = null;
+    $form['revision_information'] = null;
+
+    $form['#after_build'][] = 'do_a_thing';
+    // exit;
+  }
+
+  if ($form_id == 'test_node_form') {
+    // print '<pre>';
+    // print_r($form);
+    // print '</pre>';
+    $form['comment_settings']['#type'] = 'hidden';
+    $form['options'] = null;
+    $form['author'] = null;
+    $form['revision_information'] = null;
+    $form['menu'] = null;
+    $form['path'] = null;
+    // $form['#after_build'][] = 'do_a_thing';
+    // exit;
   }
 
 
 }
+//
+// function do_a_thing(&$form, &$form_state) {
+//   print '<pre>';
+//   print_r($form['additional_settings']['group']['#groups']['additional_settings'][1]);
+//   print '</pre>';
+//   $form['additional_settings']['group']['#groups']['additional_settings'][1] = null;
+//   // $form['additional_settings']['group']['#groups']['additional_settings'][5]['#access'] = 0;
+//   // $form['additional_settings']['group']['#groups']['additional_settings'][5]['#groups']['additional_settings'][4]['#access'] = 0;
+//   return $form;
+// }
